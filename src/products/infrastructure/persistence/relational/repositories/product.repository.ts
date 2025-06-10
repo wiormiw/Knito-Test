@@ -267,7 +267,6 @@ export class ProductRelationalRepository implements ProductRepository {
           GROUP BY prefix
         ) latest
         ON split_part(p."productName", ' ', 1) = latest.prefix AND p.id = latest.max_id;
-
       `,
     );
 
