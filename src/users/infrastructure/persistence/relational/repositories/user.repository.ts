@@ -187,7 +187,7 @@ export class UsersRelationalRepository implements UserRepository {
           r.id as "roleId",
           r.name as "roleName"
         FROM "user" u
-        LEFT JOIN "role" ON u."roleId" = r.id
+        LEFT JOIN "role" r ON u."roleId" = r.id
         WHERE u."socialId" = $1 AND u.provider = $2
       `,
       [socialId, provider],
